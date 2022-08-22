@@ -1,0 +1,63 @@
+{
+    "usuarios": [
+        {
+            "nick": "a",
+            "password": "15",
+            "monedas": "0",
+            "edad": "15"
+        },
+        {
+            "nick": "b",
+            "password": "16",
+            "monedas": "0",
+            "edad": "20"
+        },
+        {
+            "nick": "c",
+            "password": "19",
+            "monedas": "0",
+            "edad": "21"
+        }
+    ],
+    "articulos": [
+        {
+            "id": "",
+            "categoria": "",
+            "precio": "",
+            "nombre": "",
+            "src": ""
+        },
+        {
+            "id": "",
+            "categoria": "",
+            "precio": "",
+            "nombre": "",
+            "src": ""
+        },
+        {
+            "id": "",
+            "categoria": "",
+            "precio": "",
+            "nombre": "",
+            "src": ""
+        }
+    ],
+    "tutorial": {
+        "ancho": "",
+        "alto": "",
+        "movimientos": [
+            {
+                "x": "",
+                "y": ""
+            },
+            {
+                "x": "",
+                "y": ""
+            },
+            {
+                "x": "",
+                "y": ""
+            }
+        ]
+    }
+}

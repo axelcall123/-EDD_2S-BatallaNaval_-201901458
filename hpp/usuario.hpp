@@ -2,15 +2,18 @@
 #define USUARIO_H
 #include <iostream>
 using namespace std;
-class usuario{    
+struct usuarioH{    
     private:
         string nick;
         string password;
         string moneda;
+        string edad;
     public:
-        void ob(string nick,string password, string monedas);
+        usuarioH();
+        void ob(string nick,string password, string moneda,string edad);
         string re_nick();
         string re_password();
         string re_moneda();
+        string re_edad();
 };
 #endif

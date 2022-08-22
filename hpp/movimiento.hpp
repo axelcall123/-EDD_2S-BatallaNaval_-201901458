@@ -2,10 +2,12 @@
 #define MOVIMIENTO_H
 #include <iostream>
 using namespace std;
-class movimiento
+class movimientoH
 {
-    public:
+    private:
         string x;
         string y;
+    public:
+        
 };
 #endif
