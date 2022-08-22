@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
+//LER JSON
 #include "readJson.cpp"
-
 //TEST
 
 // delete[] objeto;
@@ -35,7 +35,6 @@ int main()
                     cout << endl;
                     jsonReadH leida;
                     leida.leer(url);
-                    
                     break;
                 }
 
