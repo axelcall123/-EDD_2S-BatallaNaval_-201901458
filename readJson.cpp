@@ -1,24 +1,24 @@
 #include "hpp/readJson.hpp"
-#include <iostream>
 // json
 #include "extras/json.hpp"
 #include <iomanip>
-//leer archivo
+//LEER ARCHIVO
 #include <fstream>
 using json = nlohmann::json;
-//CLASES
-#include "usuario.cpp"
-#include "articulo.cpp"
-//LISTAS
-#include "ListaDobleCir.cpp"
-// 256
-#include "extras/SHA256.cpp"
-jsonReadH::jsonReadH()
+//YA LO INCLUYE NO SE NECESITA
+//#INCLUDE
+// 256->mine
+
+jsonReadH/*<U,D,T>*/::jsonReadH()
 {
 
 }
 // delete[] algo;
-string jsonReadH::leer(string url){
+/*template <typename U, typename D, typename T>*/
+UserArtCol<ListaDobleCirH<usuarioH>,
+           ListaListaH<string, articuloH>,
+           SimpleH<string>> jsonReadH /*<U,D,T>*/ ::leer(string url)
+{
     //  D://AXEL//DOCUMENTOS//UNIVERSIDAD--ESTUDIOS//2022-2B-4A//#EDDL 2DA//CLASE//txt.txt
     ifstream MyReadFile(url);
 
@@ -30,39 +30,67 @@ string jsonReadH::leer(string url){
     }
 
     json j_complete = json::parse(txtjson);//PARSEO JSON
+    // USUARIOS------
     ListaDobleCirH<usuarioH> usuarioLista;//TIPO USUARIO
     usuarioH usuarioClass;
-
+    shadcsH pass;
     for (auto var : j_complete.at("usuarios")) // FOR EACH PARA OBTENER LOS "TXT"
     {
             //var.at("nick|password|monedas|edad")
             //256
-            SHA256 sha;
-            sha.update(var.at("password"));//CONVIRTE 256->RETURN{VAR}
-            uint8_t *digest = sha.digest();
-
+            
             usuarioClass.ob( // CLASE USUARIO
                 var.at("nick"),
-                SHA256::toString(digest),
+                pass.codificado(var.at("password")),
                 var.at("monedas"),
                 var.at("edad"));
-            delete[] digest;//ELIMNAR
             usuarioLista.Insertar(NULL, usuarioClass); // INSERTAR LISTAS
     }
+    // ARTICULOS------
     articuloH articuloClass;
+    ListaListaH<string,articuloH> articuloLista;
+    bool uno=true;
     for (auto var : j_complete.at("articulos")) // FOR EACH PARA OBTENER LOS "TXT"
     {
         // var.at("id|categorias|precio|nombre|src")
-
-        articuloClass.ob( // CLASE CATEGORIA
+        articuloClass.ob( // CLASE ARTICULO
             var.at("id"),
-            var.at("categorias"),
             var.at("precio"),
             var.at("nombre"),
             var.at("src"));
-        /*
-        usuarioLista.Insertar(NULL, usuarioClass); // INSERTAR LISTAS*/
+        if(uno==true){
+            articuloLista.InsertarAlInicio(NULL, var.at("categoria")); // EVITAR ERROR LISTA VACIA
+            uno=false;
+        }     
+        articuloLista.InsertarZP1(NULL, var.at("categoria"), articuloClass); // INSERTAR LISTAS
     }
+    // TUTORIAL------
+    SimpleH<string> cola;
+    string auxU = j_complete.at("tutorial").at("ancho") /*+ ";" +*/;
+    string auxD=j_complete.at("tutorial").at("alto");
+    string aux=auxU+";"+auxD;
+    cola.InsertarAlFinal(NULL,aux);
 
-    return "holis";
+    for(auto var:j_complete.at("tutorial").at("movimientos")){//FOR EACH PARA OBTENER LOS "TXT"
+        auxU=var.at("x");
+        auxD=var.at("y");
+        aux = auxU + ";" + auxD;
+        cola.InsertarAlFinal(NULL,aux);
+    }
+    //usuarioLista articuloLista cola
+    UserArtCol < ListaDobleCirH<usuarioH>,
+        ListaListaH<string, articuloH>,
+        SimpleH < string >> retorno;
+    
+    retorno.a=usuarioLista;
+    retorno.b=articuloLista;
+    retorno.c=cola;
+    return retorno;
 };
+
+/*UserArtCol<ListaDobleCirH<usuarioH>,
+           ListaListaH<string, articuloH>,
+           SimpleH<string>>
+xk(){
+    return 
+};*/

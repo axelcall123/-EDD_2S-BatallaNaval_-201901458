@@ -24,4 +24,5 @@ void ListaDobleCirH<T>::Insertar(Nodo<T> *nuevo, T info)
     }
     lc=nuevo;
     tam+=1;
+    //delete nuevo,info;
 }

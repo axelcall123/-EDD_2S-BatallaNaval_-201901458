@@ -1,4 +1,4 @@
-#include "simple.hpp" //llama al archivo
+#include "hpp/simple.hpp" //llama al archivo
 #include <iostream>
 // Nombreclass:NombreConstructor
 template <typename T>
@@ -24,6 +24,7 @@ void SimpleH<T>::InsertarAlInicio(Nodo<T> *nuevo, T info) // PUSH,PILA
         nuevo->sig = primero;
         primero = nuevo;
     }
+    //delete nuevo,info;
 }
 template <typename T>
 void SimpleH<T>::InsertarAlFinal(Nodo<T> *nuevo, T info) // INSERTAR,COLA
@@ -41,6 +42,7 @@ void SimpleH<T>::InsertarAlFinal(Nodo<T> *nuevo, T info) // INSERTAR,COLA
         final->sig = nuevo;
         final = nuevo;
     }
+    //delete nuevo,info;
 }
 
 template <typename T>

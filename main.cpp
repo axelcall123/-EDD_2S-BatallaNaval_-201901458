@@ -1,13 +1,29 @@
+//SI EL MAIN YA TRAE INCLUDES SUS OTRAS FUCIONES NO SE UTILIZAN
 #include <iostream>
 using namespace std;
 //LER JSON
 #include "readJson.cpp"
-//TEST
+// CLASES
+#include "usuario.cpp"
+#include "articulo.cpp"
+// LISTAS
+#include "ListaDobleCir.cpp"
+#include "ListaLista.cpp"
+#include "simple.cpp"
+// RETURN
+#include "UserArticuloCola.cpp"
+// 256->mine
+#include "shaDCS.cpp"
+// TEST
 
 // delete[] objeto;
 int main()
 {
     bool salida = false;
+ListaDobleCirH<usuarioH> *usuario;
+ListaListaH<string, articuloH> *articulo;
+SimpleH < string > *tuto;
+
 
     do
     {
@@ -28,18 +44,50 @@ int main()
                 case 1:
                 { // PARA NO ERROR{}
                     // RETORNA UN JSON
+                    cout << "CASO 1:JSON" << endl;
                     cout << "ingrese la url" << endl;
                     // URL->D://HOLA//SI
                     string url;
                     cin >> url;
                     cout << endl;
                     jsonReadH leida;
-                    leida.leer(url);
+                    //leida.xk();
+                    url = "D:/AXEL/DOCUMENTOS/U--OTROS/GITHUB/EDD-2022-2B/-EDD_2S-BatallaNaval_-201901458/json/j.json"; // FIXME:elminar depues
+                    UserArtCol<ListaDobleCirH<usuarioH>, ListaListaH<string, articuloH>, SimpleH<string>>
+                    retorno;
+
+                    retorno=leida.leer(url);
+                    usuario = new ListaDobleCirH<usuarioH>;
+                    articulo= new ListaListaH<string, articuloH>;
+                    tuto= new SimpleH<string>;
+                    usuario = &retorno.a;
+                    articulo=&retorno.b;
+                    tuto=&retorno.c;
                     break;
                 }
 
-                case 2:
+                case 2:{
+                    cout << "CASO 2:REGISTRO" << endl;
+                    cout << "ingrese nick" << endl;
+                    string nick;
+                    cin >> nick;
+                    cout << endl;
+
+                    cout << "ingrese password" << endl;
+                    string password;
+                    cin >> password;
+                    cout << endl;
+
+                    cout << "ingrese edad" << endl;
+                    string edad;
+                    cin >> edad;
+                    cout << endl;
+                    usuarioH nuevoUser; // OBTNER OBJETO
+                    shadcsH pass;
+                    nuevoUser.ob(nick,pass.codificado(password) , "0", edad); // NUEVO USUARIO
+                    usuario->Insertar(NULL,nuevoUser);
                     break;
+                }
                 case 3:
                     break;
                 case 4:

@@ -1,19 +1,19 @@
 #include "hpp/ListaLista.hpp" //llama al archivo
 #include <iostream>
 // Nombreclass:NombreConstructor
-
-template <typename T>
-ListaListaH<T>::ListaListaH()
+using namespace std;
+template <typename K,typename T>
+ListaListaH<K,T>::ListaListaH()
 {
     primero=nullptr;
     final = nullptr;
 }
 //tipo|void NombreClass::NombreMetodo(valores...)
-template <typename T>
-void ListaListaH<T>::InsertarAlInicio(Nodo<T> *nuevo, T info)
+template <typename K, typename T>
+void ListaListaH<K,T>::InsertarAlInicio(NodoKT<K,T> *nuevo, K info)
 {
-    nuevo=new struct Nodo<T>();
-    nuevo->info=info;
+    nuevo=new struct NodoKT<K,T>();
+    nuevo->infoK=info;
     //[3:p]->[2]->[1:f]:n # insertado
     if(primero==nullptr){
         primero=nuevo;
@@ -22,23 +22,24 @@ void ListaListaH<T>::InsertarAlInicio(Nodo<T> *nuevo, T info)
         nuevo->sig=primero;
         primero=nuevo;
     }
+    //delete nuevo,info;
 }
 
-template <typename T>
+template <typename K, typename T>
 //*aux=SIG->SIG->SIG
-void ListaListaH<T>::InsertarZP1(Nodo<T> *aux, T buscarCat, T info)//BUSCAR SI EXISTE
+void ListaListaH<K,T>::InsertarZP1(NodoKT<K,T> *aux, K buscarCat, T info) // BUSCAR SI EXISTE
 {
     /*
     [a]
      ↓{sig}
-    [b]->{ant}[b1]->{sig}[b2]->{sig}[b3]
+    [b]->{ant}[b1]->{ant}[b2]->{ant}[b3]
      ↓{sig}
     [c]
     */
-    aux = new struct Nodo<T>();
+    aux = new struct NodoKT<K,T>();
     aux=primero;
     //BUSCAR NODO
-    while(buscarCat!=aux->info && aux->sig!=nullptr){
+    while(buscarCat!=aux->infoK && aux->sig!=nullptr){
         aux=aux->sig;
     }
     //INSERTAR NODO
@@ -56,19 +57,21 @@ void ListaListaH<T>::InsertarZP1(Nodo<T> *aux, T buscarCat, T info)//BUSCAR SI E
         InsertarZP2(aux,NULL, info);
         /*aux->ant = aux2; //[b]->{ant}[info]*/
     }
+    //delete aux;
 }
 
-template <typename T>
-void ListaListaH<T>::InsertarZP2(Nodo<T> *aux, Nodo<T> *aux2, T info)
+template <typename K, typename T>
+void ListaListaH<K,T>::InsertarZP2(NodoKT<K,T> *aux, NodoKT<K,T> *aux2, T info)
 {
     if(aux->ant==nullptr){//[b]->
-        aux2= new struct Nodo<T>();
-        aux2->info=info;
+        aux2= new struct NodoKT<K,T>();
+        aux2->infoT=info;
         aux->ant=aux2;
-    }else{//[b]->{ant}[b1]->{sig}[b2]
-        aux2 = new struct Nodo<T>();
-        aux2->info = info;
-        aux2->sig=aux->ant;
+    }else{//[b]->{ant}[b1]->{ant}[b2]
+        aux2 = new struct NodoKT<K,T>();
+        aux2->infoT = info;
+        aux2->ant=aux->ant;
         aux->ant=aux2;
     }
+    //delete aux,aux2;
 }

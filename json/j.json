@@ -1,62 +1,81 @@
 {
     "usuarios": [
         {
-            "nick": "a",
-            "password": "15",
-            "monedas": "0",
-            "edad": "15"
+            "nick": "auxEDD",
+            "password": "auxEDD",
+            "monedas": "200",
+            "edad": "55"
         },
         {
-            "nick": "b",
-            "password": "16",
-            "monedas": "0",
-            "edad": "20"
+            "nick": "aux",
+            "password": "aux",
+            "monedas": "20",
+            "edad": "35"
         },
         {
-            "nick": "c",
-            "password": "19",
-            "monedas": "0",
-            "edad": "21"
+            "nick": "EDD",
+            "password": "EDD",
+            "monedas": "100",
+            "edad": "45"
         }
     ],
     "articulos": [
         {
-            "id": "",
-            "categoria": "",
-            "precio": "",
-            "nombre": "",
+            "id": "1",
+            "categoria": "Epico",
+            "precio": "Q100",
+            "nombre": "B1",
             "src": ""
         },
         {
-            "id": "",
-            "categoria": "",
-            "precio": "",
-            "nombre": "",
+            "id": "2",
+            "categoria": "Epico",
+            "precio": "Q200",
+            "nombre": "B2",
             "src": ""
         },
         {
-            "id": "",
-            "categoria": "",
-            "precio": "",
-            "nombre": "",
+            "id": "3",
+            "categoria": "Raro",
+            "precio": "Q150",
+            "nombre": "B3",
+            "src": ""
+        },
+        {
+            "id": "4",
+            "categoria": "Legendario",
+            "precio": "Q1000",
+            "nombre": "B4",
             "src": ""
         }
     ],
     "tutorial": {
-        "ancho": "",
-        "alto": "",
+        "ancho": "10",
+        "alto": "30",
         "movimientos": [
             {
-                "x": "",
-                "y": ""
+                "x": "1",
+                "y": "6"
             },
             {
-                "x": "",
-                "y": ""
+                "x": "3",
+                "y": "9"
             },
             {
-                "x": "",
-                "y": ""
+                "x": "5",
+                "y": "1"
+            },
+            {
+                "x": "5",
+                "y": "8"
+            },
+            {
+                "x": "6",
+                "y": "3"
+            },
+            {
+                "x": "0",
+                "y": "0"
             }
         ]
     }

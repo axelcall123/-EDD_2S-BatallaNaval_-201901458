@@ -1,11 +1,9 @@
 #include <iostream>
 using namespace std;
-#include "articulo.cpp"
+#include "shaDCS.cpp"
+
 int main(){
-    articuloH t;
-    t.ob("a","b","c","d","e");
-    cout<<t.re_id()<<"#1"<<endl;
-    t.ob("a0", "b0", "c0", "d0","e0");
-    cout << t.re_id() << "#2" << endl; /**/
+    shadcsH nuevo;
+    cout<<nuevo.codificado("56")<<endl;
     return 0;
 }
