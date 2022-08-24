@@ -15,7 +15,9 @@ using namespace std;
 // 256->mine
 #include "shaDCS.cpp"
 // TEST
-
+//NOTAS
+/*SE DEVE PONER LAS FUNCIONES A UTILZAR EN .HPP;
+SI SE UTILZA UNA FUNCION .CPP Y LA MISMA ENTRO .CPP QUE YA ESTE EL MAIN ERROR*/
 // delete[] objeto;
 int main()
 {
@@ -89,6 +91,7 @@ SimpleH < string > *tuto;
                     break;
                 }
                 case 3:
+                    cout << "CASO 2:LOGIN" << endl;
                     break;
                 case 4:
                     break;

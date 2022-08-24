@@ -5,7 +5,7 @@
 //LEER ARCHIVO
 #include <fstream>
 using json = nlohmann::json;
-//YA LO INCLUYE NO SE NECESITA
+//YA LO INCLUYE NO SE NECESITA ESTA EN EL .HPP
 //#INCLUDE
 // 256->mine
 
