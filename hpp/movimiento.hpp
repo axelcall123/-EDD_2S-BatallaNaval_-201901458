@@ -8,6 +8,8 @@ class movimientoH
         string x;
         string y;
     public:
-        
+        void ob(string x, string y);
+        string re_x();
+        string re_y();
 };
 #endif

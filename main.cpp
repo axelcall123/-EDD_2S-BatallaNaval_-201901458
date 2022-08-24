@@ -10,10 +10,13 @@ using namespace std;
 #include "ListaDobleCir.cpp"
 #include "ListaLista.cpp"
 #include "simple.cpp"
+#include "movimiento.cpp"
 // RETURN
 #include "UserArticuloCola.cpp"
 // 256->mine
 #include "shaDCS.cpp"
+//FUNCIONALIDADES
+#include "login.cpp"
 // TEST
 //NOTAS
 /*SE DEVE PONER LAS FUNCIONES A UTILZAR EN .HPP;
@@ -24,7 +27,7 @@ int main()
     bool salida = false;
 ListaDobleCirH<usuarioH> *usuario;
 ListaListaH<string, articuloH> *articulo;
-SimpleH < string > *tuto;
+SimpleH <movimientoH> *tuto;
 
 
     do
@@ -55,13 +58,13 @@ SimpleH < string > *tuto;
                     jsonReadH leida;
                     //leida.xk();
                     url = "D:/AXEL/DOCUMENTOS/U--OTROS/GITHUB/EDD-2022-2B/-EDD_2S-BatallaNaval_-201901458/json/j.json"; // FIXME:elminar depues
-                    UserArtCol<ListaDobleCirH<usuarioH>, ListaListaH<string, articuloH>, SimpleH<string>>
+                    UserArtCol<ListaDobleCirH<usuarioH>, ListaListaH<string, articuloH>, SimpleH<movimientoH>>
                     retorno;
 
                     retorno=leida.leer(url);
                     usuario = new ListaDobleCirH<usuarioH>;
                     articulo= new ListaListaH<string, articuloH>;
-                    tuto= new SimpleH<string>;
+                    tuto= new SimpleH<movimientoH>;
                     usuario = &retorno.a;
                     articulo=&retorno.b;
                     tuto=&retorno.c;
@@ -86,13 +89,37 @@ SimpleH < string > *tuto;
                     cout << endl;
                     usuarioH nuevoUser; // OBTNER OBJETO
                     shadcsH pass;
+                    //FIXME:FALTA VERIFICAR SI EXISTE NOMBRE
                     nuevoUser.ob(nick,pass.codificado(password) , "0", edad); // NUEVO USUARIO
                     usuario->Insertar(NULL,nuevoUser);
                     break;
                 }
-                case 3:
+                case 3:{
                     cout << "CASO 2:LOGIN" << endl;
+                    cout << "ingrese nombre y password" << endl;
+
+                    cout << "ingrese nick" << endl;
+                    string nick;
+                    cin >> nick;
+                    cout << endl;
+
+                    cout << "ingrese password" << endl;
+                    string password;
+                    cin >> password;
+                    cout << endl;
+                    //FIXME:ELMINAR ESTO DEPUES
+                    nick="aux";
+                    password="aux";
+                    Nodo<usuarioH> *aux=usuario->buscarD(NULL, nick, password);
+                    if(aux!=NULL){//PASS Y NOMBRE SON IGUALES
+                        loginH logs;
+                        cout << "loggueando" << endl;
+                        logs.principal(usuario,aux,tuto);
+                    }else{
+                        cout << "no ingreso bien algun dato" << endl;
+                    }
                     break;
+                }
                 case 4:
                     break;
                 case 5:

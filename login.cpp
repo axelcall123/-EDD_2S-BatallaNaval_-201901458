@@ -1,8 +1,9 @@
 #include <iostream>
 #include "hpp/login.hpp"
-
 using namespace std;
-void loginH::principal(ListaDobleCirH<usuarioH> *usuario){
+//FIXME:CREO QUE NO NECESITO LISTADOBLECIR
+void loginH::principal(ListaDobleCirH<usuarioH> *usuario, Nodo<usuarioH> *logg,SimpleH<movimientoH> *tutos) // LOGG SIRVE PARA YA NO BUSCAR DE NUEVO[TIENE LA DIRECCION ESTABLECIDA]
+{
     bool salida = false;
     do
     {
@@ -24,9 +25,9 @@ void loginH::principal(ListaDobleCirH<usuarioH> *usuario){
             case 1:
             {
                 cout << "CASO 1:EDITAR" << endl;
-                cout << "ingrese nick:ed" << endl;
-                string nick;
-                cin >> nick;
+                cout << "ingrese nuevo nick:ed" << endl;
+                string nuevoNick;
+                cin >> nuevoNick;
                 cout << endl;
 
                 cout << "ingrese password:ed" << endl;
@@ -38,18 +39,53 @@ void loginH::principal(ListaDobleCirH<usuarioH> *usuario){
                 string edad;
                 cin >> edad;
                 cout << endl;
-                usuario->modificar(NULL,nick,password,edad);
+                usuario->modificar(logg,nuevoNick, password, edad);
                 //editarInfo(usuario);
                 break;
             }
 
             case 2:
             {
-                
+                cout << "CASO 2:ELMINAR" << endl;
+                cout << "quiere elminar la cuenta? si: no" << endl;
+                string eliminar;
+                cin >> eliminar;
+                cout << endl;
+                if(eliminar=="si"){
+                    usuario->eliminar(logg, NULL);
+                }else{
+                    break;
+                }
+                opcion = true;
                 break;
             }
             case 3:
             {
+                cout << "CASO 3:TUTORIAL" << endl;
+                SimpleH<movimientoH> *auxTuto = new SimpleH<movimientoH>;
+                string movimientos="";
+                int contador = 0;
+                while (tutos->vacia() != true) // MINETRAS NO ESTE VACIO NO SAQUE
+                {
+
+                    movimientoH oBstring = tutos->Sacar(); // SACAR
+                    auxTuto->InsertarAlFinal(NULL,oBstring);//VOLVER A METER
+                    
+                    
+                    if(contador==0){//VER PRIMERA PARTE
+                        cout << "TABLERO:" << endl;
+                        cout << "   ANCHO:" << oBstring.re_x() << endl;
+                        cout << "   ALTO:" << oBstring.re_y() << endl;
+                        contador+=1;
+                    }else{
+                        movimientos = movimientos+ "(" + oBstring.re_x() + "," + oBstring.re_y() + ")->";
+                    }
+                    
+                };
+                cout << "MOVIMIENTOS:" << endl;
+                cout << movimientos << endl;
+                tutos=auxTuto;//VOLVER AL INICIAL
+                delete auxTuto;//ELIMINAR EL QUE NO HACE FALTA
                 break;
             }
 
@@ -82,12 +118,6 @@ void loginH::principal(ListaDobleCirH<usuarioH> *usuario){
 /*void loginH::editarInfo(ListaDobleCirH<usuarioH> *user){
     
 };*/
-void loginH::elminarInfo(){
-
-};
-void loginH::verTuto(){
-
-};
 void loginH::verArticulos(){
 
 };

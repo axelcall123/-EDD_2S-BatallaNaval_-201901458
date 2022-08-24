@@ -9,15 +9,14 @@ using json = nlohmann::json;
 //#INCLUDE
 // 256->mine
 
-jsonReadH/*<U,D,T>*/::jsonReadH()
+jsonReadH::jsonReadH()
 {
 
 }
 // delete[] algo;
-/*template <typename U, typename D, typename T>*/
 UserArtCol<ListaDobleCirH<usuarioH>,
            ListaListaH<string, articuloH>,
-           SimpleH<string>> jsonReadH /*<U,D,T>*/ ::leer(string url)
+           SimpleH<movimientoH>> jsonReadH::leer(string url)
 {
     //  D://AXEL//DOCUMENTOS//UNIVERSIDAD--ESTUDIOS//2022-2B-4A//#EDDL 2DA//CLASE//txt.txt
     ifstream MyReadFile(url);
@@ -65,22 +64,20 @@ UserArtCol<ListaDobleCirH<usuarioH>,
         articuloLista.InsertarZP1(NULL, var.at("categoria"), articuloClass); // INSERTAR LISTAS
     }
     // TUTORIAL------
-    SimpleH<string> cola;
-    string auxU = j_complete.at("tutorial").at("ancho") /*+ ";" +*/;
-    string auxD=j_complete.at("tutorial").at("alto");
-    string aux=auxU+";"+auxD;
-    cola.InsertarAlFinal(NULL,aux);
+    //"hpp/movimiento.hpp"
+    movimientoH movs;
+    SimpleH<movimientoH> cola;
+    movs.ob(j_complete.at("tutorial").at("ancho"), j_complete.at("tutorial").at("alto"));
+    cola.InsertarAlFinal(NULL,movs);
 
     for(auto var:j_complete.at("tutorial").at("movimientos")){//FOR EACH PARA OBTENER LOS "TXT"
-        auxU=var.at("x");
-        auxD=var.at("y");
-        aux = auxU + ";" + auxD;
-        cola.InsertarAlFinal(NULL,aux);
+        movs.ob(var.at("x"), var.at("y"));
+        cola.InsertarAlFinal(NULL,movs);
     }
     //usuarioLista articuloLista cola
     UserArtCol < ListaDobleCirH<usuarioH>,
         ListaListaH<string, articuloH>,
-        SimpleH < string >> retorno;
+        SimpleH < movimientoH>> retorno;
     
     retorno.a=usuarioLista;
     retorno.b=articuloLista;

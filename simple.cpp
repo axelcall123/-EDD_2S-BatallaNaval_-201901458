@@ -4,6 +4,7 @@
 template <typename T>
 SimpleH<T>::SimpleH()
 {
+    tam=0;
     primero = nullptr;
     final = nullptr;
 }
@@ -24,6 +25,7 @@ void SimpleH<T>::InsertarAlInicio(Nodo<T> *nuevo, T info) // PUSH,PILA
         nuevo->sig = primero;
         primero = nuevo;
     }
+    tam+=1;
     //delete nuevo;
 }
 template <typename T>
@@ -42,6 +44,7 @@ void SimpleH<T>::InsertarAlFinal(Nodo<T> *nuevo, T info) // INSERTAR,COLA
         final->sig = nuevo;
         final = nuevo;
     }
+    tam += 1;
     //delete nuevo;
 }
 
@@ -52,6 +55,21 @@ T SimpleH<T>::Sacar()
     //[a]  [b:p]->[c:f]
     T dato;
     dato = primero->info; // OBTENGO LA INFO
-    primero = primero->sig;
+    if (tam!=1){
+        primero->sig->ant = primero;
+        primero = primero->sig;
+        delete primero->ant;
+    }else{
+        primero=nullptr;
+    }
+    tam-=1;
     return dato;
 }
+template <typename T>
+bool SimpleH<T>::vacia(){
+    bool vacia=false;
+    if(primero==nullptr){
+        vacia=true;
+    }
+    return vacia;
+};

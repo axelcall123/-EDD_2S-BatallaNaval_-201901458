@@ -8,7 +8,6 @@ struct Nodo
 {
     //public: //por ser struct
     T info;
-    int tam;
     Nodo *sig;//SIG{simple} SIG{ListaLista}
     Nodo *ant;//ANT{dobleC} Z{ListaLista}
 };
