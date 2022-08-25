@@ -26,6 +26,7 @@ void ListaDobleCirH<T>::Insertar(Nodo<T> *nuevo, T info)
     tam+=1;
     //delete nuevo;
 }
+
 template <typename T>
 void ListaDobleCirH<T>::modificar(Nodo<T> *aux,string nuevoNick,string edad, string password){
     shadcsH change;
@@ -33,6 +34,7 @@ void ListaDobleCirH<T>::modificar(Nodo<T> *aux,string nuevoNick,string edad, str
     aux->info.ob_password(change.codificado(password));
     aux->info.ob_edad(edad);
 };
+
 template <typename T>
 Nodo<T> *ListaDobleCirH<T>::buscarU(Nodo<T> *aux, string nombre)//BUSCAR SOLO POR NICK
 {
@@ -50,6 +52,7 @@ Nodo<T> *ListaDobleCirH<T>::buscarU(Nodo<T> *aux, string nombre)//BUSCAR SOLO PO
     }
     return aux;
 };
+
 template <typename T>
 Nodo<T> *ListaDobleCirH<T>::buscarD(Nodo<T> *aux, string nombre, string pass)//BUSCA POR NICK Y PASSWORD
 {
@@ -72,6 +75,7 @@ Nodo<T> *ListaDobleCirH<T>::buscarD(Nodo<T> *aux, string nombre, string pass)//B
     }
     return aux;
 };
+
 template <typename T>
 void ListaDobleCirH<T>::eliminar(Nodo<T> *aux,Nodo<T> *aux2){
     cout<<aux<<endl;
@@ -95,4 +99,47 @@ void ListaDobleCirH<T>::eliminar(Nodo<T> *aux,Nodo<T> *aux2){
         aux2->sig->ant = aux2;
         tam -= 1;
     }
+};
+
+template <typename T>
+string ListaDobleCirH<T>::graficarTxt(Nodo<T> *aux){
+    aux = new struct Nodo<T>();
+    aux=lc;
+    // rankdir=LR; L->R GENERAL
+    string dotI = "subgraph usuario {\nrankdir=LR;\n"; // INICO
+    string dotM="";//MEDIO
+    string dotF = "}";//FINAL
+    string dotAt="";// A1[label="info1"]
+    string dotConSig="";//A1->A2
+    string dotConAnt = ""; //A2->A1
+    int id=1;
+    //CICLO
+    for(int i=0;i<tam;i++){
+        //CONVETIR INT
+        stringstream ss;
+        ss << i;
+        dotAt+="US"+ss.str()+//A1 A2
+            "[label=\""+
+                // nick,password,edad,monedas,contra
+                "nick:"+aux->info.re_nick()+"\n"+
+                "password:"+aux->info.re_password()+"\n"+
+                "edad:"+aux->info.re_edad()+"\n"+
+                "monedas:"+aux->info.re_moneda()+
+            +"\"]\n";
+        dotConSig+="US"+ss.str()+"->";
+        ss << (tam - i - 1);
+        dotConAnt+="US"+ss.str()+"->";
+        aux=aux->sig;
+    }
+    if(tam!=0){
+        // CONVETIR INT
+        stringstream ss;
+        ss << (tam-1);
+        dotConSig += "US" + ss.str()+"\n";
+        ss << (0);
+        dotConAnt += "US" + ss.str()+"\n";
+    }
+    dotM=dotAt+dotConSig+dotConAt
+    dotF=dotI+dotM+dotF;
+    return dotF;
 };

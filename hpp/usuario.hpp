@@ -15,7 +15,7 @@ struct usuarioH{
         void ob_password(string password);
         void ob_moneda(string moneda);
         void ob_edad(string edad);
-
+            
         string re_nick();
         string re_password();
         string re_moneda();

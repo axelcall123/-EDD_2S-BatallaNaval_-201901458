@@ -20,7 +20,7 @@ struct jsonReadH{
     UserArtCol<
         ListaDobleCirH<usuarioH>,
         ListaListaH<string, articuloH>,
-        SimpleH<movimientoH>> leer(string url);
+        SimpleH<movimientoH>> leer(string url);//DEVUELVE TODO ESO
                
 };
 #endif

@@ -57,7 +57,7 @@ SimpleH <movimientoH> *tuto;
                     cout << endl;
                     jsonReadH leida;
                     //leida.xk();
-                    url = "D:/AXEL/DOCUMENTOS/U--OTROS/GITHUB/EDD-2022-2B/-EDD_2S-BatallaNaval_-201901458/json/j.json"; // FIXME:elminar depues
+                    url = "D:/AXEL/DOCUMENTOS/U--OTROS/GITHUB/EDD-2022-2B/-EDD_2S-BatallaNaval_-201901458/json/j.json"; // FIXME:ELIMINAR DESPUES
                     UserArtCol<ListaDobleCirH<usuarioH>, ListaListaH<string, articuloH>, SimpleH<movimientoH>>
                     retorno;
 
@@ -120,10 +120,12 @@ SimpleH <movimientoH> *tuto;
                     }
                     break;
                 }
-                case 4:
+                case 4:{
+                    
                     break;
+                    }
                 case 5:
-                    opcion = true;
+                    salida = true;
                     break;
                 case 99:
                 {

@@ -1,4 +1,5 @@
 #include <iostream>
+//CLASE
 #include "hpp/UserArticuloCola.hpp"
 using namespace std;
 template <class U, class D,class T>

@@ -1,7 +1,6 @@
 #include <iostream>
 #include "hpp/login.hpp"
 using namespace std;
-//FIXME:CREO QUE NO NECESITO LISTADOBLECIR
 void loginH::principal(ListaDobleCirH<usuarioH> *usuario, Nodo<usuarioH> *logg,SimpleH<movimientoH> *tutos) // LOGG SIRVE PARA YA NO BUSCAR DE NUEVO[TIENE LA DIRECCION ESTABLECIDA]
 {
     bool salida = false;
@@ -56,7 +55,7 @@ void loginH::principal(ListaDobleCirH<usuarioH> *usuario, Nodo<usuarioH> *logg,S
                 }else{
                     break;
                 }
-                opcion = true;
+                salida = true;
                 break;
             }
             case 3:
@@ -91,13 +90,14 @@ void loginH::principal(ListaDobleCirH<usuarioH> *usuario, Nodo<usuarioH> *logg,S
 
             case 4:
             {
-                break;
-            }
-            case 6:
-            {
+
                 break;
             }
             case 5:
+            {
+                break;
+            }
+            case 6:
                 opcion = true;
                 break;
             case 99:
@@ -114,10 +114,4 @@ void loginH::principal(ListaDobleCirH<usuarioH> *usuario, Nodo<usuarioH> *logg,S
             cout << "ups!!" << endl;
         }
     } while (!salida);
-};
-/*void loginH::editarInfo(ListaDobleCirH<usuarioH> *user){
-    
-};*/
-void loginH::verArticulos(){
-
 };

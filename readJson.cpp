@@ -78,7 +78,7 @@ UserArtCol<ListaDobleCirH<usuarioH>,
     UserArtCol < ListaDobleCirH<usuarioH>,
         ListaListaH<string, articuloH>,
         SimpleH < movimientoH>> retorno;
-    
+        
     retorno.a=usuarioLista;
     retorno.b=articuloLista;
     retorno.c=cola;
