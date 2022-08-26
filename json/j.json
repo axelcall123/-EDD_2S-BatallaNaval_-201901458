@@ -23,28 +23,28 @@
         {
             "id": "1",
             "categoria": "Epico",
-            "precio": "Q100",
+            "precio": "100",
             "nombre": "B1",
             "src": ""
         },
         {
             "id": "2",
             "categoria": "Epico",
-            "precio": "Q200",
+            "precio": "200",
             "nombre": "B2",
             "src": ""
         },
         {
             "id": "3",
             "categoria": "Raro",
-            "precio": "Q150",
+            "precio": "150",
             "nombre": "B3",
             "src": ""
         },
         {
             "id": "4",
             "categoria": "Legendario",
-            "precio": "Q1000",
+            "precio": "1000",
             "nombre": "B4",
             "src": ""
         }

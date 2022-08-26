@@ -1,9 +1,13 @@
 #include <iostream>
 #include "hpp/login.hpp"
 using namespace std;
-void loginH::principal(ListaDobleCirH<usuarioH> *usuario, Nodo<usuarioH> *logg,SimpleH<movimientoH> *tutos) // LOGG SIRVE PARA YA NO BUSCAR DE NUEVO[TIENE LA DIRECCION ESTABLECIDA]
+void loginH::principal(ListaDobleCirH<usuarioH> usuario, 
+    Nodo<usuarioH> *logg, 
+    SimpleH<movimientoH> tutos, 
+    ListaListaH<string, articuloH> articulo) // LOGG SIRVE PARA YA NO BUSCAR DE NUEVO[TIENE LA DIRECCION ESTABLECIDA]
 {
     bool salida = false;
+    SimpleH<SimpleH<movimientoH>> pila;
     do
     {
         cout << "---EN LOGIN---" << endl;
@@ -13,12 +17,13 @@ void loginH::principal(ListaDobleCirH<usuarioH> *usuario, Nodo<usuarioH> *logg,S
         cout << "3. VER EL TUTORIAL" << endl;//#4
         cout << "4. VER ARTICULOS DE LA TIENDA" << endl;//#3
         cout << "5. REALIZAR MOVIMIENTOS" << endl;//#5
-        cout << "5. SALIR" << endl; //#5
+        cout << "6. SALIR" << endl; //#5
         try
         {
             int opcion;
             cin >> opcion;
             cout << endl;
+            
             switch (opcion)
             {
             case 1:
@@ -38,7 +43,7 @@ void loginH::principal(ListaDobleCirH<usuarioH> *usuario, Nodo<usuarioH> *logg,S
                 string edad;
                 cin >> edad;
                 cout << endl;
-                usuario->modificar(logg,nuevoNick, password, edad);
+                usuario.modificar(logg,nuevoNick, password, edad);
                 //editarInfo(usuario);
                 break;
             }
@@ -51,7 +56,7 @@ void loginH::principal(ListaDobleCirH<usuarioH> *usuario, Nodo<usuarioH> *logg,S
                 cin >> eliminar;
                 cout << endl;
                 if(eliminar=="si"){
-                    usuario->eliminar(logg, NULL);
+                    usuario.eliminar(logg, NULL);
                 }else{
                     break;
                 }
@@ -61,14 +66,14 @@ void loginH::principal(ListaDobleCirH<usuarioH> *usuario, Nodo<usuarioH> *logg,S
             case 3:
             {
                 cout << "CASO 3:TUTORIAL" << endl;
-                SimpleH<movimientoH> *auxTuto = new SimpleH<movimientoH>;
+                SimpleH<movimientoH> auxTuto;
                 string movimientos="";
                 int contador = 0;
-                while (tutos->vacia() != true) // MINETRAS NO ESTE VACIO NO SAQUE
+                while (tutos.vacia() != true) // MINETRAS NO ESTE VACIO NO SAQUE
                 {
 
-                    movimientoH oBstring = tutos->Sacar(); // SACAR
-                    auxTuto->InsertarAlFinal(NULL,oBstring);//VOLVER A METER
+                    movimientoH oBstring = tutos.Sacar(); // SACAR
+                    auxTuto.InsertarAlFinal(NULL,oBstring);//VOLVER A METER
                     
                     
                     if(contador==0){//VER PRIMERA PARTE
@@ -84,21 +89,76 @@ void loginH::principal(ListaDobleCirH<usuarioH> *usuario, Nodo<usuarioH> *logg,S
                 cout << "MOVIMIENTOS:" << endl;
                 cout << movimientos << endl;
                 tutos=auxTuto;//VOLVER AL INICIAL
-                delete auxTuto;//ELIMINAR EL QUE NO HACE FALTA
+                //delete auxTuto;//ELIMINAR EL QUE NO HACE FALTA
                 break;
             }
 
             case 4:
             {
-
+                cout << "CASO 4:ARTICULOS" << endl;
+                cout<<"Total Tokens:: "<<logg->info.re_moneda()<<endl;
+                articulo.recorrerAll(NULL,NULL);
                 break;
             }
             case 5:
             {
+                cout << "CASO 5:MOVIMIENTOS" << endl;
+                cout << "Ingrese x,y a la hora que se le solicite" << endl;
+                cout << "para salir escriba back:no save" << endl;
+                cout << "para guardar y salir escriva save" << endl;
+                string x="x";
+                string y="y";
+                cout<<endl;
+                SimpleH<movimientoH> realizarMovs;
+                movimientoH claseMov;
+                while(x!="back" | y!="back"){
+                    //CORDENAS
+                    //x
+                    cout << "Ingrese x|back|save" << endl;                   
+                    cin >> x;
+                    cout << endl;
+                    if(x=="back"){break;}//SALIR
+                    else if(x=="save"){
+                        string nombre;
+                        cout << "Ingrese el nombre salvado" << endl;
+                        cin >> nombre;
+                        cout << endl;
+                        // INSETAR INICIO PILA
+                        pila.InsertarAlInicio(NULL,realizarMovs);
+                        break;
+                    }
+                    //y
+                    cout << "Ingrese y|back|save" << endl;
+                    cin >> y;
+                    cout << endl;
+                    if (y == "back"){ break;}// PARA SALIR              
+                    else if (x == "save")
+                    {
+                        string nombre;
+                        cout << "Ingrese el nombre salvado" << endl;
+                        cin >> nombre;
+                        cout << endl;
+                        //INSETAR INICIO PILA
+                        pila.InsertarAlInicio(NULL, realizarMovs);
+                        break;
+                    }
+                    //GUARDAR MOVS x,y EN UNA COLA
+                    claseMov.ob(x, y);
+                    realizarMovs.InsertarAlFinal(NULL, claseMov);
+                       
+                }
+                //FIXME:IF DIF x="X",y="Y" SI HIZO PARTIDA
+                // GANAR PUNTOS POR MOVIMIENTO
+                //  STR->INT
+                int punto = stoi(logg->info.re_moneda()) + 1;
+                // INT->STR
+                stringstream id1;
+                id1 << punto;
+                logg->info.ob_moneda(id1.str());
                 break;
             }
             case 6:
-                opcion = true;
+                salida = true;
                 break;
             case 99:
             {

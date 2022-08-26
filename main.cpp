@@ -17,6 +17,7 @@ using namespace std;
 #include "shaDCS.cpp"
 //FUNCIONALIDADES
 #include "login.cpp"
+#include "graph.cpp"
 // TEST
 //NOTAS
 /*SE DEVE PONER LAS FUNCIONES A UTILZAR EN .HPP;
@@ -24,11 +25,10 @@ SI SE UTILZA UNA FUNCION .CPP Y LA MISMA ENTRO .CPP QUE YA ESTE EL MAIN ERROR*/
 // delete[] objeto;
 int main()
 {
-    bool salida = false;
-ListaDobleCirH<usuarioH> *usuario;
-ListaListaH<string, articuloH> *articulo;
-SimpleH <movimientoH> *tuto;
-
+bool salida = false;
+ListaDobleCirH<usuarioH> usuario;
+ListaListaH<string, articuloH> articulo;
+SimpleH <movimientoH> tuto;
 
     do
     {
@@ -62,12 +62,12 @@ SimpleH <movimientoH> *tuto;
                     retorno;
 
                     retorno=leida.leer(url);
-                    usuario = new ListaDobleCirH<usuarioH>;
+                    /*usuario = new ListaDobleCirH<usuarioH>;
                     articulo= new ListaListaH<string, articuloH>;
-                    tuto= new SimpleH<movimientoH>;
-                    usuario = &retorno.a;
-                    articulo=&retorno.b;
-                    tuto=&retorno.c;
+                    tuto= new SimpleH<movimientoH>;*/
+                    usuario = retorno.a;
+                    articulo=retorno.b;
+                    tuto=retorno.c;
                     break;
                 }
 
@@ -89,9 +89,20 @@ SimpleH <movimientoH> *tuto;
                     cout << endl;
                     usuarioH nuevoUser; // OBTNER OBJETO
                     shadcsH pass;
+
+                    Nodo<usuarioH> *aux = usuario.buscarD(NULL, nick, password);
+                    if (aux == NULL)
+                    { // PASS Y NOMBRE SON IGUALES
+                        nuevoUser.ob(nick, pass.codificado(password), "0", edad); // NUEVO USUARIO
+                        usuario.Insertar(NULL, nuevoUser);
+                    }
+                    else
+                    {
+                        cout << "existe usuario" << endl;
+                    }
+                    delete aux;
                     //FIXME:FALTA VERIFICAR SI EXISTE NOMBRE
-                    nuevoUser.ob(nick,pass.codificado(password) , "0", edad); // NUEVO USUARIO
-                    usuario->Insertar(NULL,nuevoUser);
+                    
                     break;
                 }
                 case 3:{
@@ -107,21 +118,24 @@ SimpleH <movimientoH> *tuto;
                     string password;
                     cin >> password;
                     cout << endl;
-                    //FIXME:ELMINAR ESTO DEPUES
-                    nick="aux";
-                    password="aux";
-                    Nodo<usuarioH> *aux=usuario->buscarD(NULL, nick, password);
+                    /*nick="axk";
+                    password="axk";*/
+                    Nodo<usuarioH> *aux=usuario.buscarD(NULL, nick, password);
                     if(aux!=NULL){//PASS Y NOMBRE SON IGUALES
                         loginH logs;
                         cout << "loggueando" << endl;
-                        logs.principal(usuario,aux,tuto);
+                        logs.principal(usuario,aux,tuto,articulo);
                     }else{
                         cout << "no ingreso bien algun dato" << endl;
                     }
+                    delete aux;
                     break;
                 }
                 case 4:{
-                    
+                    string user=usuario.graficarTXT(NULL);
+                    string arts=articulo.graficarTXT(NULL,NULL);
+                    graphH graf;
+                    graf.grafica(user+arts);
                     break;
                     }
                 case 5:

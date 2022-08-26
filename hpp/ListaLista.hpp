@@ -16,9 +16,9 @@ struct ListaListaH
     // metodos{func}
     void InsertarAlInicio(NodoKT<K,T> *nodoN, K dato);
     void InsertarZP1(NodoKT<K,T> *nodoAux,K datoBuscar,T dato);//BUSCA SI EXISTE EL NODO
-    void recorrerAll(NodoKT<K, T> *nodoAux);
+    void recorrerAll(NodoKT<K, T> *nodoAux, NodoKT<K, T> *nodoAux2);
     void ordenarMM(NodoKT<K, T> *nodoAux, NodoKT<K, T> *nodoAux2, NodoKT<K, T> *auxReg); // ORDENA MIN A MAY Y VICEVERSA
-    string graficar(NodoKT<K, T> *nodoAux,NodoKT<K, T> *nodoAux2);
+    string graficarTXT(NodoKT<K, T> *nodoAux,NodoKT<K, T> *nodoAux2);
 private:
     void InsertarZP2(NodoKT<K, T> *nodoAux, NodoKT<K, T> *nodoAux2, T dato); // CREA EL NODO [b]->{ant}[b1]->{sig}[b2]
     NodoKT<K, T> *primero;

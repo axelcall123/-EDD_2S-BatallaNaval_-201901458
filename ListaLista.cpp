@@ -78,15 +78,31 @@ void ListaListaH<K,T>::InsertarZP2(NodoKT<K,T> *aux, NodoKT<K,T> *aux2, T info)
 }
 
 template <typename K, typename T>
-void ListaListaH<K, T>::recorrerAll(NodoKT<K, T> *aux){//NULL
+void ListaListaH<K, T>::recorrerAll(NodoKT<K, T> *aux,NodoKT<K, T> *aux2)
+{ // NULL
     aux = new NodoKT<K, T>;
+    aux2 = new NodoKT<K, T>;
+    aux=primero;
+    cout << "id   Nombre  Categoria   Precio" << endl;
     while(aux->sig!=nullptr){
-        if(aux->ant!=nullptr){
-            if(aux->ant->ant!=nullptr){//EXISTE [A]->[B]->[...]
-                ordenarMM(aux->ant, aux->ant->ant, aux->ant);
+        string categoria=aux->infoK;
+        aux2 = aux->ant;
+        while (aux2!= nullptr)
+        {
+            string id = aux2->infoT.re_id();
+            string nombre = aux2->infoT.re_nombre();
+            string precio = aux2->infoT.re_precio();
+            cout<<id+"  "+nombre+"   "+categoria+"   "+precio<<endl;
+            if(aux2->ant==nullptr){//END
+                break;
+            }
+            aux2 = aux2->ant;
+            /*if(aux->ant->ant!=nullptr){//EXISTE [A]->[B]->[...]
+                //ordenarMM(aux->ant, aux->ant->ant, aux->ant);
+
             }else{//EXISTE [A]->
                 //DEVULVO NADAS
-            }
+            }*/
         }
         aux=aux->sig;
     }
@@ -97,63 +113,90 @@ void ListaListaH<K, T>::ordenarMM( //[a]{aux}->[b]{aux2}->[c]
     NodoKT<K, T> *aux2, //[b]
     NodoKT<K, T> *Reg   // REGRESAR INICIO [a]
 )
-{
-    int cont=0;
-    //CICLO SE REPITE n^2 veces
-    while(aux->ant!=nullptr && cont!=tam*tam){//[a]->
-        while (aux2->ant != nullptr)
-        { //[a]->
-            if (stoi(aux->infoT.re_precio()) > stoi(aux2->infoT.re_precio()))
-            { //[a]<[b]  PRECIO infoT<articuloH>
-
-            }
-
-        }
-        cont+=1;
-
-    }
-};
+{};
 
 template <typename K, typename T>
-string ListaListaH<K, T>::graficar(NodoKT<K, T> *aux,NodoKT<K, T> *aux2){
+string ListaListaH<K, T>::graficarTXT(NodoKT<K, T> *aux,NodoKT<K, T> *aux2){
     aux=new NodoKT<K, T>;
     aux2=new NodoKT<K, T>;
     aux=primero;
     SimpleH<string> diagrama;
     string dotP="";//P_1
-    string dotPS="";P_1->P_2
-    string dotN="";//N_1_1     
+    string dotPS="";//P_1->P_2
+    string dotN="";//N_1_1    
     string dotNS="";//N_1_1->N_1_2
     string rank = "{rank=same"; //{rank=same;N_1_1-;N_1_2}                                       // A2->A1
     int id = 0;
     //CICLO
     //INT
-    stringstream ss;
-    stringstream aa;
+    
+    
     int i=0;
     int ii=0;
     while(aux->sig!=nullptr){
-        aux2=aux->ant;
-        ss << i;
-        dotP+="P_"+ss.str()+
+        stringstream id1;
+        id1 << i;
+        //P_1[label=".."]
+        dotP=dotP+"N_"+id1.str()+
             "[label=\""+
                 aux->infoK
             +"\"]\n";
-        
-        dotpS+="N_"+ss.str()+"->";
-        while(aux2->ant!=nullptr){
-            aa << ii;
-            dotN += "N_" + ss.str() + "_" + aa.str() +
-                    "[label=\"" +
-                        aux2->infoT.re_nombre()
-                    +"\"]\n";
-        rank+=;
-        dotNS+="N_" + ss.str() + "_" + aa.str()+"->";
-            ii+=1;
+        //P_1->P_2;
+        if(i==0){//P_1
+            dotPS = dotPS +"N_" + id1.str();
+        }else{//->P_2
+            dotPS = dotPS +"->" + "N_" + id1.str();
         }
-        aux->sig;
+        aux2 = aux->ant;
+        // RESET
+        //{rank=same;P_1
+        rank = "{rank=same;N_" + id1.str();
+        while(aux2!=nullptr){
+            stringstream id2;
+            id2 << ii;
+            //P_1_1[label=""]
+            dotN = dotN+ "N_" + id1.str() + "_" + id2.str() +
+                    "[label=\"" +
+                    aux2->infoT.re_nombre() + "\"]\n";
+            //;P_1_1;P_1_2
+            rank=rank+";"+"N_" + id1.str() + "_" + id2.str();
+            //P_1_1->P_1_2
+            if(ii==0){//P_1->P_1_1
+                dotNS ="N_" + id1.str()+"->"+ 
+                "N_" + id1.str() + "_" + id2.str();
+            }
+            else{//->P_1_1
+                dotNS = dotNS +"->" + "N_" + id1.str() + "_" + id2.str();
+            } 
+            if (aux2->ant == nullptr)
+            { // END
+                break;
+            }
+            aux2 = aux2->ant;
+            ii += 1;
+        }
+        rank=rank+"}";
+        diagrama.InsertarAlInicio(NULL,dotN+rank + "\n" + dotNS + ";\n");
+        //INSERTAR
+        //RESET
+        dotNS="";
+        i+=1;
+        ii=0;
+        aux = aux->sig;
+    }
+    i=0;
+    string dotF="";
+    diagrama.InsertarAlInicio(NULL, dotP+dotPS);
+    string dotUn = "subgraph articulo";
+    while(diagrama.vacia()!=true){//subgraph articuloN{}
+        stringstream id1;
+        id1 << i;
+        dotF+=dotUn+id1.str()+"{\n"+
+            diagrama.Sacar()+"\n"+"}";
         i+=1;
     }
+    dotF=dotF;
+    //cout << dotF << endl;
     return dotF;
 };
 /*subgraph cluster0 {

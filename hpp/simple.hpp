@@ -1,6 +1,7 @@
 #ifndef SIMPLE_H
 #define SIMPLE_H
 #include "nodo.hpp"
+using namespace std;
 template <class T>
 struct SimpleH
 {
@@ -13,7 +14,8 @@ struct SimpleH
     // metodos{func}
     void InsertarAlInicio(Nodo<T> *nodoN, T dato); // PUSH,PILA
     void InsertarAlFinal(Nodo<T> *nodoN, T dato);  // INSERTAR,COLA
-    T Sacar();                                     // POP, ELIMINAR
+    T Sacar();
+    string graficarTXT(Nodo<T> *nodoAux);                          // POP, ELIMINAR
     bool vacia();                                  //SI ESTA VACIO
 };
 #endif

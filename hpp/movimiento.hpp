@@ -7,9 +7,12 @@ class movimientoH
     private:
         string x;
         string y;
+        //string nombre;
     public:
-        void ob(string x, string y);
+        movimientoH();
+        void ob(string x, string y/*,string nombre*/);
         string re_x();
         string re_y();
+        //string re_nombre();
 };
 #endif

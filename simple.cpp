@@ -58,6 +58,7 @@ T SimpleH<T>::Sacar()
     if (tam!=1){
         primero->sig->ant = primero;
         primero = primero->sig;
+        
         delete primero->ant;
     }else{
         primero=nullptr;
@@ -72,4 +73,20 @@ bool SimpleH<T>::vacia(){
         vacia=true;
     }
     return vacia;
+};
+
+template <typename T>
+string SimpleH<T>::graficarTXT(Nodo<T> *aux)
+{
+    /*string dotI = "subgraph usuario {\nrankdir=LR;\n"; // INICO
+    string dotM="";//MEDIO
+    string dotF = "}";//FINAL
+    string dotAt="";// A1[label="info1"]
+    string dotConSig="";//A1->A2
+    aux=new Nodo<T>;
+    while(aux->sig!=nullptr){
+
+        aux=aux->sig;
+    }*/
+    return "";
 };
