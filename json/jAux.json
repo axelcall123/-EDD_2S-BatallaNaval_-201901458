@@ -1,0 +1,82 @@
+{
+    "usuarios": [
+        {
+            "nick": "auxEDD",
+            "password": "auxEDD",
+            "monedas": "200",
+            "edad": "55"
+        },
+        {
+            "nick": "aux",
+            "password": "aux",
+            "monedas": "20",
+            "edad": "35"
+        },
+        {
+            "nick": "EDD",
+            "password": "EDD",
+            "monedas": "100",
+            "edad": "45"
+        }
+    ],
+    "articulos": [
+        {
+            "id": "1",
+            "categoria": "Epico",
+            "precio": "100",
+            "nombre": "B1",
+            "src": ""
+        },
+        {
+            "id": "2",
+            "categoria": "Epico",
+            "precio": "200",
+            "nombre": "B2",
+            "src": ""
+        },
+        {
+            "id": "3",
+            "categoria": "Raro",
+            "precio": "150",
+            "nombre": "B3",
+            "src": ""
+        },
+        {
+            "id": "4",
+            "categoria": "Legendario",
+            "precio": "1000",
+            "nombre": "B4",
+            "src": ""
+        }
+    ],
+    "tutorial": {
+        "ancho": "10",
+        "alto": "30",
+        "movimientos": [
+            {
+                "x": "1",
+                "y": "6"
+            },
+            {
+                "x": "3",
+                "y": "9"
+            },
+            {
+                "x": "5",
+                "y": "1"
+            },
+            {
+                "x": "5",
+                "y": "8"
+            },
+            {
+                "x": "6",
+                "y": "3"
+            },
+            {
+                "x": "0",
+                "y": "0"
+            }
+        ]
+    }
+}

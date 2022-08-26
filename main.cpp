@@ -100,7 +100,7 @@ SimpleH <movimientoH> tuto;
                     {
                         cout << "existe usuario" << endl;
                     }
-                    delete aux;
+                    //delete aux;
                     //FIXME:FALTA VERIFICAR SI EXISTE NOMBRE
                     
                     break;
@@ -128,7 +128,7 @@ SimpleH <movimientoH> tuto;
                     }else{
                         cout << "no ingreso bien algun dato" << endl;
                     }
-                    delete aux;
+                    //delete aux;
                     break;
                 }
                 case 4:{

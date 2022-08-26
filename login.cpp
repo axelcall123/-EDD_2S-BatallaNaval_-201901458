@@ -43,7 +43,7 @@ void loginH::principal(ListaDobleCirH<usuarioH> usuario,
                 string edad;
                 cin >> edad;
                 cout << endl;
-                usuario.modificar(logg,nuevoNick, password, edad);
+                usuario.modificar(logg, nuevoNick, edad, password);
                 //editarInfo(usuario);
                 break;
             }
