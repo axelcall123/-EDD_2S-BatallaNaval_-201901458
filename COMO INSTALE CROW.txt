@@ -1,0 +1,15 @@
+BAJE CROW con git
+	carpeta crow/scripts comandos->DICE PAGINA
+link:https://crowcpp.org/master/getting_started/setup/windows/
+BAJE VCPKG con git
+	.\bootstrap-vcpkg.bat
+	./vcpkg integrate install
+	.\vcpkg install asio:x64-windows
+link:https://vcpkg.io/en/getting-started.html
+
+VISUAL STUDIO ENTERPRISE
+Desarollo para el escritorio:
+herramienta cmake para windows
+clang
+
+

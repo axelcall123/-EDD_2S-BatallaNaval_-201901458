@@ -1,0 +1,97 @@
+﻿D:\AXEL\JUEGOS\64\Microsoft Visual Studio\2022\Enterprise\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: El directorio intermedio (x64\Debug\) contiene archivos compartidos de otro proyecto (FASE2.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
+  main.cpp
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(1043,13): warning C4267: 'inicializando': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+  Please define _WIN32_WINNT or _WIN32_WINDOWS appropriately. For example:
+  - add -D_WIN32_WINNT=0x0601 to the compiler command line; or
+  - add _WIN32_WINNT=0x0601 to your project's Preprocessor Definitions.
+  Assuming _WIN32_WINNT=0x0601 (i.e. Windows 7 target).
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(1516,41): warning C4267: '=': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(1769,1): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(1805,1): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(1844,1): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(3561,39): warning C4267: 'argumento': conversión de 'size_t' a 'uint32_t'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(4024,1): warning C4267: 'return': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(4384,1): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(4403,1): warning C4267: '=': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(4405,1): warning C4267: 'argumento': conversión de 'size_t' a '_Ty'; posible pérdida de datos
+          with
+          [
+              _Ty=int
+          ]
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(4508,1): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(4654,1): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(4665,1): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(4683,1): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(4694,1): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(4756,1): warning C4267: '=': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(4856,1): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(6048,38): warning C4244: '=': conversión de '__int64' a 'unsigned long'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(6068,38): warning C4244: '=': conversión de '__int64' a 'unsigned long'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(9300,38): warning C4099: 'crow::CookieParser': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(9105): message : vea la declaración de 'crow::CookieParser'
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(9307,1): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(9712,1): warning C4099: 'crow::SessionMiddleware<Store>': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(9716): message : Vea la referencia a la creación de una instancia de clase plantilla "crow::SessionMiddleware<Store>::context" que se está compilando
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(9851): message : Vea la referencia a la creación de una instancia de clase plantilla "crow::SessionMiddleware<Store>" que se está compilando
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(11235,70): warning C4244: 'argumento': conversión de '__int64' a 'unsigned int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(11256,70): warning C4244: 'argumento': conversión de '__int64' a 'unsigned int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(11277,70): warning C4244: 'argumento': conversión de '__int64' a 'unsigned int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(11299,1): warning C4267: 'argumento': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(11315,1): warning C4267: 'argumento': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(11330,1): warning C4267: 'argumento': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(11380,53): warning C4267: '+=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(11391,45): warning C4267: '+=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(11437,36): warning C4267: '+=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(11440,33): warning C4267: '+=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(11656,1): warning C4267: 'argumento': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(11656,1): warning C4267: 'argumento': conversión de 'size_t' a 'uint16_t'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(11703,1): warning C4267: 'argumento': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(11869,1): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(13168,1): warning C4267: '=': conversión de 'size_t' a 'uint16_t'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(13168): message : al compilar la función del miembro clase plantilla "uint16_t crow::Server<crow::Crow<>,crow::SocketAdaptor>::pick_io_service_idx(void)"
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(13187): message : Vea la referencia a la creación de una instancia de la función plantilla "uint16_t crow::Server<crow::Crow<>,crow::SocketAdaptor>::pick_io_service_idx(void)" que se está compilando
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(13589): message : Vea la referencia a la creación de una instancia de clase plantilla "crow::Server<crow::Crow<>,crow::SocketAdaptor>" que se está compilando
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(13568): message : al compilar la función del miembro clase plantilla "void crow::Crow<>::run(void)"
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\src\main.cpp(19): message : Vea la referencia a la creación de una instancia de la función plantilla "void crow::Crow<>::run(void)" que se está compilando
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\src\main.cpp(6): message : Vea la referencia a la creación de una instancia de clase plantilla "crow::Crow<>" que se está compilando
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(12816,65): warning C4244: 'argumento': conversión de 'unsigned __int64' a 'int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(12807): message : al compilar la función del miembro clase plantilla "void crow::Connection<Adaptor,Handler>::do_read(void)"
+          with
+          [
+              Adaptor=crow::SocketAdaptor,
+              Handler=crow::Crow<>
+          ]
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(12417): message : Vea la referencia a la creación de una instancia de la función plantilla "void crow::Connection<Adaptor,Handler>::do_read(void)" que se está compilando
+          with
+          [
+              Adaptor=crow::SocketAdaptor,
+              Handler=crow::Crow<>
+          ]
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(13184): message : Vea la referencia a la creación de una instancia de clase plantilla "crow::Connection<Adaptor,Handler>" que se está compilando
+          with
+          [
+              Adaptor=crow::SocketAdaptor,
+              Handler=crow::Crow<>
+          ]
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(13184): message : al compilar la función del miembro clase plantilla "void crow::Server<crow::Crow<>,crow::SocketAdaptor>::do_accept(void)"
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(13121): message : Vea la referencia a la creación de una instancia de la función plantilla "void crow::Server<crow::Crow<>,crow::SocketAdaptor>::do_accept(void)" que se está compilando
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(8432,1): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(8417): message : al compilar la función del miembro clase plantilla "bool crow::HTTPParser<crow::Connection<Adaptor,Handler>>::feed(const char *,int)"
+          with
+          [
+              Adaptor=crow::SocketAdaptor,
+              Handler=crow::Crow<>
+          ]
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(12816): message : Vea la referencia a la creación de una instancia de la función plantilla "bool crow::HTTPParser<crow::Connection<Adaptor,Handler>>::feed(const char *,int)" que se está compilando
+          with
+          [
+              Adaptor=crow::SocketAdaptor,
+              Handler=crow::Crow<>
+          ]
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(12939): message : Vea la referencia a la creación de una instancia de clase plantilla "crow::HTTPParser<crow::Connection<Adaptor,Handler>>" que se está compilando
+          with
+          [
+              Adaptor=crow::SocketAdaptor,
+              Handler=crow::Crow<>
+          ]
+  FASE2.vcxproj -> D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\x64\Debug\server.exe
