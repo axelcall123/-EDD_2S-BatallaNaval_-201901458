@@ -11,16 +11,15 @@
 #include "usuario.hpp"
 #include "articulo.hpp"
 #include "movimiento.hpp"
-// 256->mine
+//256->mine
 #include "shaDCS.hpp"
     using namespace std; // NO DE ERROR string leer(string url)
-// template <typename U,typename D,typename T>
+//template <typename U,typename D,typename T>
 struct jsonReadH{
     jsonReadH();
     UserArtCol<
         ListaDobleCirH<usuarioH>,
         ListaListaH<string, articuloH>,
-        SimpleH<movimientoH>> leer(string url);//DEVUELVE TODO ESO
-               
+        SimpleH<movimientoH>> leer(string url);//DEVUELVE TODO ESO       
 };
 #endif

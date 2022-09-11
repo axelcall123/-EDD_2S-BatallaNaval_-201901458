@@ -27,6 +27,36 @@
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="lib\SHA256.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\readJson.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\articulo.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ListaDobleCir.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ListaLista.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\movimiento.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shaDCS.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\simple.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\usuario.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UserArticuloCola.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\crow_all.h">
@@ -40,6 +70,18 @@
     </ClInclude>
     <ClInclude Include="hpp\clases.hpp">
       <Filter>hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="hpp\funciones.hpp">
+      <Filter>hpp</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\json_fwd.hpp">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\json.hpp">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\SHA256.h">
+      <Filter>lib</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

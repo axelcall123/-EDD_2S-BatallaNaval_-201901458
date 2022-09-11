@@ -29,7 +29,9 @@ private:
 #define LISTADOBLECIR_H
 #include "nodos.hpp"
 // 256->mine
-#include "shaDCS.hpp"
+
+
+#include "funciones.hpp"
 template <class T>
 struct ListaDobleCirH
 {
@@ -52,7 +54,7 @@ public:
 
 #ifndef SIMPLE_H
 #define SIMPLE_H
-#include "nodo.hpp"
+#include "nodos.hpp"
 using namespace std;
 template <class T>
 struct SimpleH

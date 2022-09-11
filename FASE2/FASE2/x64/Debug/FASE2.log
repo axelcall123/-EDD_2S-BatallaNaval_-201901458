@@ -1,4 +1,23 @@
 ﻿D:\AXEL\JUEGOS\64\Microsoft Visual Studio\2022\Enterprise\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: El directorio intermedio (x64\Debug\) contiene archivos compartidos de otro proyecto (FASE2.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
+  articulo.cpp
+  ListaDobleCir.cpp
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\funciones.hpp(15,9): error C2065: 'ListaDobleCirH': identificador no declarado
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\funciones.hpp(15,24): error C2275: 'usuarioH': se esperaba una expresión en lugar de un tipo
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\funciones.hpp(14,5): error C2974: 'UserArtCol': argumento plantilla no válido para 'U', tipo esperado
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\clases.hpp(77): message : vea la declaración de 'UserArtCol'
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\funciones.hpp(14,5): error C2976: 'UserArtCol': no hay suficientes argumentos de plantilla
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\clases.hpp(77): message : vea la declaración de 'UserArtCol'
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\funciones.hpp(15,33): error C2059: error de sintaxis: ','
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\funciones.hpp(17,47): error C2238: símbolos (token) inesperados delante de ';'
+  ListaLista.cpp
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\funciones.hpp(15,9): error C2065: 'ListaDobleCirH': identificador no declarado
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\funciones.hpp(15,24): error C2275: 'usuarioH': se esperaba una expresión en lugar de un tipo
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\funciones.hpp(14,5): error C2974: 'UserArtCol': argumento plantilla no válido para 'U', tipo esperado
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\clases.hpp(77): message : vea la declaración de 'UserArtCol'
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\funciones.hpp(14,5): error C2976: 'UserArtCol': no hay suficientes argumentos de plantilla
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\clases.hpp(77): message : vea la declaración de 'UserArtCol'
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\funciones.hpp(15,33): error C2059: error de sintaxis: ','
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\funciones.hpp(17,47): error C2238: símbolos (token) inesperados delante de ';'
   main.cpp
 D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(1043,13): warning C4267: 'inicializando': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
   Please define _WIN32_WINNT or _WIN32_WINDOWS appropriately. For example:
@@ -52,8 +71,8 @@ D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\F
 D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(13187): message : Vea la referencia a la creación de una instancia de la función plantilla "uint16_t crow::Server<crow::Crow<>,crow::SocketAdaptor>::pick_io_service_idx(void)" que se está compilando
 D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(13589): message : Vea la referencia a la creación de una instancia de clase plantilla "crow::Server<crow::Crow<>,crow::SocketAdaptor>" que se está compilando
 D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(13568): message : al compilar la función del miembro clase plantilla "void crow::Crow<>::run(void)"
-D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\src\main.cpp(19): message : Vea la referencia a la creación de una instancia de la función plantilla "void crow::Crow<>::run(void)" que se está compilando
-D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\src\main.cpp(6): message : Vea la referencia a la creación de una instancia de clase plantilla "crow::Crow<>" que se está compilando
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\src\main.cpp(90): message : Vea la referencia a la creación de una instancia de la función plantilla "void crow::Crow<>::run(void)" que se está compilando
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\src\main.cpp(29): message : Vea la referencia a la creación de una instancia de clase plantilla "crow::Crow<>" que se está compilando
 D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(12816,65): warning C4244: 'argumento': conversión de 'unsigned __int64' a 'int'; posible pérdida de datos
 D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\lib\crow_all.h(12807): message : al compilar la función del miembro clase plantilla "void crow::Connection<Adaptor,Handler>::do_read(void)"
           with
@@ -94,4 +113,18 @@ D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\F
               Adaptor=crow::SocketAdaptor,
               Handler=crow::Crow<>
           ]
-  FASE2.vcxproj -> D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\x64\Debug\server.exe
+  movimiento.cpp
+  readJson.cpp
+  shaDCS.cpp
+  simple.cpp
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\funciones.hpp(15,9): error C2065: 'ListaDobleCirH': identificador no declarado
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\funciones.hpp(15,24): error C2275: 'usuarioH': se esperaba una expresión en lugar de un tipo
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\funciones.hpp(14,5): error C2974: 'UserArtCol': argumento plantilla no válido para 'U', tipo esperado
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\clases.hpp(77): message : vea la declaración de 'UserArtCol'
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\funciones.hpp(14,5): error C2976: 'UserArtCol': no hay suficientes argumentos de plantilla
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\clases.hpp(77): message : vea la declaración de 'UserArtCol'
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\funciones.hpp(15,33): error C2059: error de sintaxis: ','
+D:\AXEL\DOCUMENTOS\U--OTROS\GITHUB\EDD-2022-2B\-EDD_2S-BatallaNaval_-201901458\FASE2\FASE2\hpp\funciones.hpp(17,47): error C2238: símbolos (token) inesperados delante de ';'
+  UserArticuloCola.cpp
+  usuario.cpp
+  Generando código...

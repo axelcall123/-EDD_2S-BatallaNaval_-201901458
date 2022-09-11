@@ -128,13 +128,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="lib\SHA256.cpp" />
+    <ClCompile Include="src\articulo.cpp" />
+    <ClCompile Include="src\ListaDobleCir.cpp" />
+    <ClCompile Include="src\ListaLista.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\movimiento.cpp" />
+    <ClCompile Include="src\readJson.cpp" />
+    <ClCompile Include="src\shaDCS.cpp" />
+    <ClCompile Include="src\simple.cpp" />
+    <ClCompile Include="src\UserArticuloCola.cpp" />
+    <ClCompile Include="src\usuario.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="hpp\clases.hpp" />
+    <ClInclude Include="hpp\funciones.hpp" />
     <ClInclude Include="hpp\listas.hpp" />
     <ClInclude Include="hpp\nodos.hpp" />
     <ClInclude Include="lib\crow_all.h" />
+    <ClInclude Include="lib\json.hpp" />
+    <ClInclude Include="lib\json_fwd.hpp" />
+    <ClInclude Include="lib\SHA256.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,31 +2,15 @@ import requests
 import json
 import tkinter as tk
 import tkinter.font as tkFont
+from tkinter import filedialog
+from tkinter import *
 
-base_url = "http://localhost:3200"
+
+base_url = "http://localhost:2500"
 
 
 class App_Main:
     def __init__(self, root):
-        print()
-
-    def GButton_221_command(self):
-        print("command")
-
-class App:
-    def __init__(self, root):
-        #setting title
-        root.title("undefined")
-        #setting window size
-        width = 370
-        height = 253
-        screenwidth = root.winfo_screenwidth()
-        screenheight = root.winfo_screenheight()
-        alignstr = '%dx%d+%d+%d' % (width, height,
-                                    (screenwidth - width) / 2, (screenheight - height) / 2)
-        root.geometry(alignstr)
-        root.resizable(width=False, height=False)
-
         #OTROS
         GListBox_user = tk.Listbox(root)
         GListBox_user["borderwidth"] = "1px"
@@ -38,7 +22,7 @@ class App:
         GListBox_user["exportselection"] = "1"
         GListBox_user["selectmode"] = "browse"
         GListBox_user["setgrid"] = "False"
-        
+
         GLabel_Titulo = tk.Label(root)
         ft = tkFont.Font(family='Times', size=23)
         GLabel_Titulo["font"] = ft
@@ -80,23 +64,144 @@ class App:
         GButton_loggin["justify"] = "center"
         GButton_loggin["text"] = "iniciar sesion"
         GButton_loggin.place(x=200, y=180, width=86, height=30)
-        GButton_loggin["command"] = self.GButton_loggin_command(GListBox_contra)
-        
-        #rootM = tk.Tk()
-        #app = App_Main(rootM)
+        GButton_loggin["command"] = self.GButton_loggin_command(
+            GListBox_contra)
+
+    def GButton_221_command(self):
+        print("command")
 
     def GButton_loggin_command(self, GListBox_contra):
         all_items = GListBox_contra.get(0, tk.END)
         print(all_items)
 
+class Main:
+    def __init__(self, root):
+        #setting title
+        root.title("undefined")
+        #setting window size
+        width = 370
+        height = 253
+        screenwidth = root.winfo_screenwidth()
+        screenheight = root.winfo_screenheight()
+        alignstr = '%dx%d+%d+%d' % (width, height,
+                                    (screenwidth - width) / 2, (screenheight - height) / 2)
+        root.geometry(alignstr)
+        root.resizable(width=False, height=False)
 
-if __name__ == '__main__':
-    ##o btener usuarios
-    #res = requests.get(f'{base_url}/get_usuario') 
-    #data = res.json() #convertimos la respuesta en dict
-    #print(data)
-    #graficos
+        GLabel_carM = tk.Label(root)
+        ft = tkFont.Font(family='Times', size=10)
+        GLabel_carM["font"] = ft
+        GLabel_carM["fg"] = "#333333"
+        GLabel_carM["justify"] = "center"
+        GLabel_carM["text"] = "Carga Masiva"
+        GLabel_carM.place(x=20, y=60, width=86, height=30)
+
+        GLabel_register = tk.Label(root)
+        ft = tkFont.Font(family='Times', size=10)
+        GLabel_register["font"] = ft
+        GLabel_register["fg"] = "#333333"
+        GLabel_register["justify"] = "center"
+        GLabel_register["text"] = "Registrar Usuario"
+        GLabel_register.place(x=20, y=100, width=98, height=30)
+
+        GLabel_reportes = tk.Label(root)
+        ft = tkFont.Font(family='Times', size=10)
+        GLabel_reportes["font"] = ft
+        GLabel_reportes["fg"] = "#333333"
+        GLabel_reportes["justify"] = "center"
+        GLabel_reportes["text"] = "reportes"
+        GLabel_reportes.place(x=20, y=140, width=70, height=25)
+
+        GButton_carM = tk.Button(root)
+        GButton_carM["bg"] = "#f0f0f0"
+        ft = tkFont.Font(family='Times', size=10)
+        GButton_carM["font"] = ft
+        GButton_carM["fg"] = "#000000"
+        GButton_carM["justify"] = "center"
+        GButton_carM["text"] = "click"
+        GButton_carM.place(x=130, y=60, width=70, height=25)
+        GButton_carM["command"] = self.GButton_carM_command
+
+        GButton_register = tk.Button(root)
+        GButton_register["bg"] = "#f0f0f0"
+        ft = tkFont.Font(family='Times', size=10)
+        GButton_register["font"] = ft
+        GButton_register["fg"] = "#000000"
+        GButton_register["justify"] = "center"
+        GButton_register["text"] = "clik"
+        GButton_register.place(x=130, y=100, width=70, height=25)
+        GButton_register["command"] = self.GButton_register_command
+
+        GButton_reportes = tk.Button(root)
+        GButton_reportes["bg"] = "#f0f0f0"
+        ft = tkFont.Font(family='Times', size=10)
+        GButton_reportes["font"] = ft
+        GButton_reportes["fg"] = "#000000"
+        GButton_reportes["justify"] = "center"
+        GButton_reportes["text"] = "click"
+        GButton_reportes.place(x=130, y=140, width=70, height=25)
+        GButton_reportes["command"] = self.GButton_reportes_command
+
+        GButton_exit = tk.Button(root)
+        GButton_exit["bg"] = "#f0f0f0"
+        ft = tkFont.Font(family='Times', size=10)
+        GButton_exit["font"] = ft
+        GButton_exit["fg"] = "#000000"
+        GButton_exit["justify"] = "center"
+        GButton_exit["text"] = "salir"
+        GButton_exit.place(x=180, y=220, width=70, height=25)
+        GButton_exit["command"] = self.GButton_exit_command
+        
+        #rootM = tk.Tk()
+        #app = App_Main(rootM)
+
+    def GButton_carM_command(self):
+        root = Tk()
+        root = filedialog.askopenfilename(initialdir="D:",
+        title="Select file", filetypes=(("lfp files", "*.json"), ("all files", "*.*")))
+        archivo = open(root, 'r', encoding="utf-8")
+        unir = ''
+        for linea in archivo.readlines():  # LEE LINEA POR LINEA
+            unir = unir+linea
+        carga = {'jsonCarga': unir}
+        x = requests.post(f'{base_url}/PostCargaMasiva', json=carga)
+        archivo.close()
+        
+        print(x.status_code)
+
+    def GButton_register_command(self):
+        print("registrar")
+
+    def GButton_reportes_command(self):
+        print("reportes")
+
+    def GButton_exit_command(self):
+        print("salida")
+
+    
+
+
+if __name__ == '__main__':   
+    # # obtener dato
+    # data = "un saludo desde python"
+    # res = requests.get(f'{base_url}/Tget')
+    # data = res.json()  # convertimos la respuesta en dict
+    # print(data)
+
+    # # enviar dato
+    # data = {'post': 'post desde python'}
+    # res = requests.post(f'{base_url}/Tpost', json=data)
+    # print(res.status_code)
+
+    # # actualizar dato
+    # data = {'put': 'put desde python'}
+    # res = requests.put(f'{base_url}/Tput', json=data)
+    # print(res.status_code)
+
+    # # eliminar dato
+    # data ={'delete': 'delete desde python'}
+    # requests.delete(f'{base_url}/Tdelete', json=data)
 
     root = tk.Tk()
-    app = App(root)
+    app = Main(root)
     root.mainloop()
